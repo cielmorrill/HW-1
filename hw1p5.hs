@@ -8,25 +8,6 @@
 -- :l hw1p5.hs (lowercase L, not 1)
 -- main
 
-import qualified Data.Map as Map
-import qualified Data.Set as Set
-import Data.Maybe
-
-type Node = String
-type DAG = Map.Map Node (Set.Set Node)
-
-a = "a"
-b = "b"
-c = "c"
-d = "d"
-e = "e"
-
-g = Map.fromList [(a, Set.fromList [b,c]),
-                  (b, Set.fromList [d]),
-                  (c, Set.fromList [d]),
-                  (d, Set.fromList []),
-                  (e, Set.fromList [a, c])]
-
 -- define our own versions of the map and filter functions manually
 -- using only natural recursion and folds—no using the Prelude or list comprehensions
 

@@ -15,18 +15,6 @@ import Data.Maybe
 type Node = String
 type DAG = Map.Map Node (Set.Set Node)
 
-a = "a"
-b = "b"
-c = "c"
-d = "d"
-e = "e"
-
-g = Map.fromList [(a, Set.fromList [b,c]),
-                  (b, Set.fromList [d]),
-                  (c, Set.fromList [d]),
-                  (d, Set.fromList []),
-                  (e, Set.fromList [a, c])]
-
 -- Instead of relying on null values, Haskell provides a special datatype called Maybe.
 -- This datatype allows you to “wrap” a result value in a way that forces you to deal with exceptional situations. 
 
