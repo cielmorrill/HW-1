@@ -26,3 +26,23 @@ g = Map.fromList [(a, Set.fromList [b,c]),
                   (c, Set.fromList [d]),
                   (d, Set.fromList []),
                   (e, Set.fromList [a, c])]
+
+-- Instead of relying on null values, Haskell provides a special datatype called Maybe.
+-- This datatype allows you to “wrap” a result value in a way that forces you to deal with exceptional situations. 
+
+-- Write a function sqrt' that returns Just x if its input value x is non-negative, and returns Nothing otherwise:
+sqrt' :: Float -> Maybe Float
+sqrt' x = if x >= 0 then Just (sqrt x) else Nothing
+
+-- To finish this problem, write a function div’ that returns either an error message or correct value, depending on whether its second input is zero:
+div' :: Float -> Float -> Either String Float
+div' _ 0 = Left "Error: Division by zero"
+div' x y = Right (x / y)
+
+main :: IO ()
+main = do
+    putStrLn "Hello, World!"
+    print $ sqrt' 9        -- Just 3.0
+    print $ sqrt' (-4)    -- Nothing
+    print $ div' 10 2     -- Right 5.0
+    print $ div' 10 0     -- Left "Error: Division by zero"
