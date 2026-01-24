@@ -1,11 +1,11 @@
 -- csci 312 programming languages
--- homework 1, problem 4: defining higher-order functions
+-- homework 1, problem 5: defining higher-order functions
 -- ciel morrill
 
--- runghc hw1p4.hs
+-- runghc hw1p5.hs
 -- OR
 -- ghci
--- :l hw1p4.hs (lowercase L, not 1)
+-- :l hw1p5.hs (lowercase L, not 1)
 -- main
 
 import qualified Data.Map as Map
