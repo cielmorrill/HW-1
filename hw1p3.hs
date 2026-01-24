@@ -15,6 +15,25 @@
     -- all values in the right branch are greater than the value of the node,
     -- both children are BSTs.
 
+import qualified Data.Map as Map
+import qualified Data.Set as Set
+import Data.Maybe
+
+type Node = String
+type DAG = Map.Map Node (Set.Set Node)
+
+a = "a"
+b = "b"
+c = "c"
+d = "d"
+e = "e"
+
+g = Map.fromList [(a, Set.fromList [b,c]),
+                  (b, Set.fromList [d]),
+                  (c, Set.fromList [d]),
+                  (d, Set.fromList []),
+                  (e, Set.fromList [a, c])]
+
 data IntTree 
     = Empty
     | Node IntTree Int IntTree deriving (Eq,Show)
