@@ -29,17 +29,19 @@ g = Map.fromList [(a, Set.fromList [b,c]),
 
 -- hasPath that takes a DAG and two nodes
 -- returns True if there is a path from the first to the second in the DAG
-
 hasPath :: DAG -> Node -> Node -> Bool
-hasPath = undefined
+hasPath g a b =
+    if a == b
+        then True
+        else any' (Set.map (\n -> hasPath g n b) (neighbors g a))
 
 -- neighbors function returns the neighbors of a node
 neighbors :: DAG -> Node -> Set.Set Node
-neighbors = undefined
+neighbors g n = fromMaybe Set.empty (Map.lookup n g)
 
 -- any' function returns True if any members of a set are True, and False otherwise.
 any' :: Set.Set Bool -> Bool
-any' = undefined
+any' = Set.foldr (||) False
 
 main :: IO ()
 main = do
