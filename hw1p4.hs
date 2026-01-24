@@ -32,20 +32,24 @@ g = Map.fromList [(a, Set.fromList [b,c]),
 
 -- sumUp returns the sum of all numbers in the input list
 sumUp' :: [Int] -> Int
-sumUp' l = map (+ xs) [x:xs]
+sumUp' l = foldl (+) 0 l
 
 -- evens returns a list of the even numbers from the input list
 evens' :: [Int] -> [Int]
-evens' l = undefined
+evens' l = filter even l
 
 -- incAll increments each number in the input list by 1
 incAll' :: [Int] -> [Int]
-incAll' l = undefined
+incAll' l = map (+1) l
 
 -- incBy increments each number in the input list by the given amount
 incBy' :: Int -> [Int] -> [Int]
-incBy' n l = undefined
+incBy' n l = map (+n) l
 
 main :: IO ()
 main = do
-  putStrLn "Hello, World!"
+    putStrLn "Hello, World!"
+    print $ sumUp' [1,2,3,4,5]
+    print $ evens' [1,2,3,4,5,6]
+    print $ incAll' [1,2,3]
+    print $ incBy' 5 [1,2,3]
