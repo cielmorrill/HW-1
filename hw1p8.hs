@@ -26,3 +26,26 @@ g = Map.fromList [(a, Set.fromList [b,c]),
                   (c, Set.fromList [d]),
                   (d, Set.fromList []),
                   (e, Set.fromList [a, c])]
+
+-- hasPath that takes a DAG and two nodes
+-- returns True if there is a path from the first to the second in the DAG
+
+hasPath :: DAG -> Node -> Node -> Bool
+hasPath = undefined
+
+-- neighbors function returns the neighbors of a node
+neighbors :: DAG -> Node -> Set.Set Node
+neighbors = undefined
+
+-- any' function returns True if any members of a set are True, and False otherwise.
+any' :: Set.Set Bool -> Bool
+any' = undefined
+
+main :: IO ()
+main = do
+    putStrLn "Hello, World!"
+    print $ hasPath g a d      -- True
+    print $ hasPath g a e      -- False
+    print $ neighbors g a      -- fromList ["b","c"]
+    print $ any' (Set.fromList [False, False, True])  -- True
+    print $ any' (Set.fromList [False, False, False]) -- False  
